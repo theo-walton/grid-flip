@@ -1,0 +1,17 @@
+grid-flip is a simple programming language where you flip bits on a grid. There are two variables, x and y, which represent the coordinates of the currently selected bit. The program will continuously loop around once the end of the program file is reached. The grid is circular so when x or y goes past the boundaries of the grid, they will be moduloed by the grid's respective dimension.
+
+There are four commands:
+
+- setx [n] : set the value of the currently chosen bit's x coordinate. n can be a single value (ex: 42, x, y), or a binary operation (ex: 3+1, x-3, y*x), note that only addition, subtraction, and multiplication is supported.
+
+- sety [n] : set the value of the currently chosen bit's y coordinate. n can be a single value (ex: 42, y, x), or a binary operation (ex: 3+1, y-3, x*y), note that only addition, subtraction, and multiplication is supported.
+
+- flip : flips the currently selected bit (to 0 if it is 1, and to 1 if it is 0).
+
+- if [n] : if the current bit is 1, the program will skip n commands; if the current bit is 0 this command is igonred.
+
+Found glitches:
+-The x and y coordinates are currently switched on the printed grid.
+-sety with a single value changes the x value instead (ex: "sety 10" will set x to 10).
+-some exceptions are not caught properly.
+-Running the interpreter without an input file will invoke a segmentation fault.
